@@ -1,0 +1,42 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a; /* Set the background color to a very dark gray */
+}
+
+#imageContainer {
+	display: grid;
+	height: 100%;
+    /* position: relative;
+    overflow: hidden; */
+}
+
+#displayedImage {
+    max-width: 100%;
+    max-height: 100vh;
+    /*object-fit: contain;
+    cursor: pointer; */
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+

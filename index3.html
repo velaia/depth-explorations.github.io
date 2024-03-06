@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        #image-container {
+            position: relative;
+        }
+        
+        #image-container img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        #prev-button, #next-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #prev-button {
+            left: 10px;
+        }
+
+        #next-button {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="image-container">
+    <img id="displayed-image" src="secondImage1.png" alt="Image">
+    <button id="prev-button" onclick="prevImagePair()">Previous</button>
+    <button id="next-button" onclick="nextImagePair()">Next</button>
+</div>
+
+<script>
+    let currentPairIndex = 0;
+    const imagePairs = [
+        { first: 'firstImage1.jpg', second: 'secondImage1.png' },
+        { first: 'firstImage2.jpg', second: 'secondImage2.png' },
+        { first: 'firstImage3.jpg', second: 'secondImage3.png' },
+        // Add more image pairs as needed
+    ];
+
+    const displayedImage = document.getElementById('displayed-image');
+
+    function showImage(index) {
+        displayedImage.src = imagePairs[index].second;
+    }
+
+    function nextImagePair() {
+        currentPairIndex = (currentPairIndex + 1) % imagePairs.length;
+        showImage(currentPairIndex);
+    }
+
+    function prevImagePair() {
+        currentPairIndex = (currentPairIndex - 1 + imagePairs.length) % imagePairs.length;
+        showImage(currentPairIndex);
+    }
+
+    displayedImage.addEventListener('click', function () {
+        displayedImage.src = imagePairs[currentPairIndex].second;
+    });
+
+    // Initial image display
+    showImage(currentPairIndex);
+</script>
+
+</body>
+</html>
+

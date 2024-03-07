@@ -1,46 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    #imageContainer {
-      position: relative;
-      width: 60%; /* Set the width as needed */
-      /*height: 100%; /* Set the height as needed */
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Depth Explorations</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: black;
+        }
 
-    #imageContainer img {
-      width: 100%;
-      height: auto;
-    }
-  </style>
-  <title>Image Swap</title>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            vertical-align: top;
+            /* align-items: center; */
+            min-height: 60vh;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .title {
+            text-align: center;
+            color: white;
+            font-size: 3em;
+            margin-bottom: 50px;
+        }
+
+        .image-container {
+            width: 40%;
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            display: block;
+            cursor: pointer;
+        }
+
+        .image-container p {
+            color: white;
+            margin-top: 1em;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: auto;
+        }
+
+        .footer a {
+            margin: 0 1em;
+            color: inherit;
+            text-decoration: none;
+            margin-top: auto;     /* Push the footer to the bottom */
+        }
+
+        .footer i {
+            font-size: 2em;
+        }
+    </style>
 </head>
 <body>
-
-<div id="imageContainer" onclick="swapImage()">
-  <img src="secondImage1.png" alt="First Image">
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var imageContainer = document.getElementById('imageContainer');
-
-    imageContainer.addEventListener('click', function() {
-      var currentImage = imageContainer.querySelector('img');
-
-      // Check if there is a second image
-      if (currentImage.src.includes('firstImage')) {
-        currentImage.src = 'secondImage1.png'; // Replace 'secondImage.jpg' with the actual second image path
-      } else {
-        currentImage.src = 'firstImage1.jpg'; // Replace 'firstImage.jpg' with the actual first image path
-      }
-    });
-  });
-</script>
-
+    <h1 class="title">In Depth Explorations</h1>
+    <div class="container">
+        <div class="image-container">
+            <a href="depth_slideshow.html">
+                <img src="images/2024-02-05 12.34.15_img_depth.webp" alt="Asia In Depth Images">
+                <p>Asia In Depth Images</p>
+            </a>
+            <p>Images of day-to-day scenes from Malaysia and Thailand. First displayed as an AI-generated depth map, then as an image when you click it or hit the space bar.
+                You can use the arrow keys on your keyboard to switch between the images.<br />
+                <ul>
+                    <li>What patterns do you see?</li>
+                    <li>How is the world different if you only have depth available?</li>
+                </ul> 
+            </p>
+        </div>
+        <div class="image-container">
+            <!-- <a href="depth_videos.html"> -->
+                <img src="images/2024-03-04 12.52.44_img_depth.webp" alt="Asia In Depth Videos">
+                <p>Asia In Depth Videos - [Coming soon ...]</p>
+            <!-- </a> -->
+            <p>Videos converted to depth maps with the sound track still available.</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <a href="https://github.com/LiheYoung/Depth-Anything">
+            Depth Anything
+        </a>
+        <a href="https://github.com/velaia/Depth-Anything">
+            (Depth Anything (adapted for this page))
+        </a>
+        <a href="https://github.com/velaia/depth-explorations.github.io">
+            Code for this page in GitHub
+        </a>
+        <a href="https://tfc.ai">tfc.ai</a>
+    </footer>
 </body>
 </html>
-

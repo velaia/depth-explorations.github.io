@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A slideshow of depth maps from travels in Malaysia and Thailand. Clicking on the image or pressing the spacebar will reveal the image used to generate the depth map.
+    All maps have been generated using the Depth Anything v2 (vitl) AI model.">
+    <link rel="stylesheet" href="styles4.css">
+    <title>Depth Map Explorer</title>
+</head>
+<body>
+    <div id="imageContainer">
+        <img id="displayedImage" src="images/v2/depth/PXL_20240324_130816906.MP.webp" alt="Image">
+        <button id="prevButton" onclick="changeImage(-1)">◀ Previous</button>
+        <button id="nextButton" onclick="changeImage(1)">Next ▶</button>
+    </div>
+    <script src="script5.js"></script>
+</body>
+</html>
+

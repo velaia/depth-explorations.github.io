@@ -11,6 +11,7 @@ Published on the [tfc.ai website](https://www.tfc.ai/depth-explorations.github.i
 # TODO
 * [x] Depth Anything V2
 * [ ] Document usage, e.g. image-map generation, webp image creation (squoosh?)
+* [ ] link back to main page from videos + images
 * [x] ~~Prepare so anyone can fork the repository or from a template with their own dependencies~~
 * [x] ~~write down dependencies~~
 * [x] Make sure it runs in simple HTTP server before publishing

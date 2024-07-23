@@ -3,16 +3,15 @@ from pathlib import Path
 import shutil
 
 
-
-depth_path = "images"
-img_path = "images"
+images_path = "images"
+depth_path = "v2/depth/"
+img_path = "v2/img/"
 
 files = []
 
-for idx, file in enumerate(glob.glob(depth_path + "/*img_depth*")):
+for idx, file in enumerate(glob.glob(images_path + "/" + depth_path + "/*.webp")):
     depth_name = Path(file).name
-    img_name = depth_name.replace("_img_depth", "").replace("png", "webp")
-    new_depth_name = depth_name.replace("png", "webp")
+    img_name = depth_name.replace(".webp", ".jpg.webp")
     # img = Path(img_path).joinpath(img_name)
     # if img.is_file():
         # print(f"{img} is file {idx}")
@@ -21,9 +20,9 @@ for idx, file in enumerate(glob.glob(depth_path + "/*img_depth*")):
         #     print("File copied successfully.")
         # except shutil.Error as e:
         #     print("Error copying file:", e)
-    files.append((new_depth_name, img_name))
+    files.append((depth_path + depth_name, img_path + img_name))
 
 
 # write to a json file that can be read from JavaScript
-with open("image-map.json", "w+") as outfile:
+with open("image-map-v2.json", "w+") as outfile:
     outfile.write(json.dumps(files))

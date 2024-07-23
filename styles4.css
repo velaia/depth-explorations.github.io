@@ -32,6 +32,11 @@ button {
     cursor: pointer;
 }
 
+#backButton {
+    left: 10px;
+    top: 1%;
+}
+
 #prevButton {
     left: 10px;
 }

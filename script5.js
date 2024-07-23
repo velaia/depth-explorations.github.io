@@ -14,6 +14,7 @@ fetch('image-map-v2.json')
 
 
 const displayedImage = document.getElementById("displayedImage");
+const hiddenPreviewImage = document.getElementById("hiddenPreviewImage")
 
 function changeImage(direction) {
     currentPairIndex += direction;

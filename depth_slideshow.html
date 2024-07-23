@@ -10,7 +10,9 @@
 </head>
 <body>
     <div id="imageContainer">
-        <img id="displayedImage" src="images/2024-03-02 15.51.45_img_depth.webp" alt="Image">
+        <img id="displayedImage" src="images/2024-03-02 15.51.45_img_depth.webp">
+        <img style="display: none;" id="hiddenPreviewImage" src="images/2024-03-02 15.51.45.webp">
+        <a href="./"><button id="backButton" >◀ Back to main page</button></a>
         <button id="prevButton" onclick="changeImage(-1)">◀ Previous</button>
         <button id="nextButton" onclick="changeImage(1)">Next ▶</button>
     </div>

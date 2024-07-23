@@ -14,6 +14,7 @@ fetch('image-map.json')
 
 
 const displayedImage = document.getElementById("displayedImage");
+const hiddenPreviewImage = document.getElementById("hiddenPreviewImage")
 
 function changeImage(direction) {
     currentPairIndex += direction;
@@ -27,6 +28,7 @@ function changeImage(direction) {
     const [secondImage, firstImage] = imagePairs[currentPairIndex];
 
     displayedImage.src = "images/" + secondImage;
+    hiddenPreviewImage.src = "images/" + firstImage;
 }
 
 displayedImage.addEventListener("click", () => {

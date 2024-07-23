@@ -14,7 +14,7 @@ for file in *.png; do cwebp -q 50 "$file" -o "${file%.*}.webp"; done
 * [x] Depth Anything V2 images
 * [x] Preload image on changeImage
 * [ ] Document usage, e.g. image-map generation, webp image creation (squoosh?)
-* [ ] link back to main page from videos + images
+* [x] link back to main page from videos + images
 * [x] ~~Prepare so anyone can fork the repository or from a template with their own dependencies~~
 * [x] ~~write down dependencies~~
 * [x] Make sure it runs in simple HTTP server before publishing

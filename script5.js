@@ -28,6 +28,7 @@ function changeImage(direction) {
     const [secondImage, firstImage] = imagePairs[currentPairIndex];
 
     displayedImage.src = "images/" + secondImage;
+    hiddenPreviewImage.src = "images/" + firstImage;
 }
 
 displayedImage.addEventListener("click", () => {

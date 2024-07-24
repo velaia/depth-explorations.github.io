@@ -17,6 +17,14 @@
             background-color: black;
         }
 
+        a:link {
+            color: #fff;
+        }
+
+        a:visited {
+            color: #fff;
+        }
+
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -36,8 +44,13 @@
         }
 
         .image-container {
-            width: 40%;
+            width: 35%;
             text-align: center;
+        }
+
+        .text-container {
+            width: 60%;
+            text-align: left;
         }
 
         .image-container img {
@@ -54,7 +67,7 @@
         .footer {
             text-align: center;
             color: white;
-            margin-top: auto;
+            margin-top: 3%;
         }
 
         .footer a {
@@ -72,18 +85,42 @@
 </head>
 
 <body>
-    <h1 class="title">In Depth Observations</h1>
-    <div class="container" style="width: 80%; text-align: left; color: beige;">
-        <p>I've been drawn to the depth maps after seeing them for the first time. They show a different view of this world that made me think. Here are some of my personal observations and thoguhts on the topic, mixed with philosophical topics I was contemplating while working on this page:
+    <div style="background-color: rgba(72, 0, 91, 50); padding:10px; width: 10%;"><a href="./">Back to main page</a>
+    </div>
+    <div class="container" style="text-align: left; color: beige;">
+        <div class="text-container">
+            <h1 class="title">In Depth Observations</h1>
+            <p>I've been drawn to depth maps after seeing them for the first time. They show a <strong>different view of this
+                world</strong> that provided for plenty of intellectual stimulation.<br />
+                Before you read about my observations, why not first <a href="depth_slideshow_v2.html">take a look for
+                yourself</a> and see what you observe?</p>
+            <p>
+                Here are some of my personal observations and thoguhts on the topic, mixed
+                with philosophical ideas I was contemplating while working on this page:
             <ul>
                 <li>Night/day differentiation is impossible.</li>
-                <li>Object surfaces: It's hard to know what a surface is made of: wood, concrete, metal, in the depth map they are all the same.</li>
-                <li>Writing, paintings, art: From the depth map you can't make out written text and paintings, you can't enjoy (2D) art, can't read signs etc.</li>
-                <li>Color plays no role in a depth-only view of the world</li>
-                <li><a href="https://www.bernardokastrup.com/">Analytic Idealism philosopher Bernardo Kastrup</a> often mentions the <a href="https://shojiwax.com/2021/09/02/the-world-through-a-dashboard/">dashboard of an airplane</a> as a metaphor to explain the human experience of the world. Viewing the world through depth maps or depth map videos allowed me to change some of the dashboard instruments.</li>
+                <li>Object surfaces: It's hard to know what a surface is made of: wood, concrete, metal, in the depth
+                    map they are all the same.</li>
+                <li>Writing, paintings, art: From the depth map you can't make out written text and paintings, you can't
+                    enjoy (2D) art, can't read signs etc.</li>
+                <li>Color plays no role in a depth-only view of the world.</li>
+                <li>You can't recognize people from depth maps.</li>
+                <li>Objects in the far distance like mountains in a panoramic image can't be seen.</li>
             </ul>
-         </p>
-
+            Philosophical
+            <ul>
+                <li><a href="https://www.bernardokastrup.com/">Analytic Idealism philosopher Bernardo Kastrup</a> often
+                    mentions the <a href="https://shojiwax.com/2021/09/02/the-world-through-a-dashboard/">dashboard of
+                        an airplane</a> as a metaphor to explain the human experience of the world. Viewing the world
+                    through depth maps or depth map videos allowed me to change some of the dashboard instruments.</li>
+                <li>Bats use depth for navigation. <a href="https://en.wikipedia.org/wiki/What_Is_It_Like_to_Be_a_Bat%3F">
+                    What Is It Like to Be a Bat?</a> became a little more tangible for me.</li>
+            </ul>
+            </p>
+        </div>
+        <div class="image-container" style="margin-top: 5%; margin-left: 3%;">
+            <img src="images/v2/depth/PXL_20240306_115330470.MP.webp" style="width:100%;" />
+        </div>
     </div>
     <footer class="footer">
         <a href="https://github.com/DepthAnything/Depth-Anything-V2">

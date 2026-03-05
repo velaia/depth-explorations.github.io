@@ -14,7 +14,12 @@ fetch('image-map-v2.json')
 
 
 const displayedImage = document.getElementById("displayedImage");
-const hiddenPreviewImage = document.getElementById("hiddenPreviewImage")
+const hiddenPreviewImage = document.getElementById("hiddenPreviewImage");
+const blendSlider = document.getElementById("blendSlider");
+
+blendSlider.addEventListener("input", () => {
+    displayedImage.style.opacity = blendSlider.value / 100;
+});
 
 function changeImage(direction) {
     currentPairIndex += direction;
@@ -29,6 +34,8 @@ function changeImage(direction) {
 
     displayedImage.src = "images/" + secondImage;
     hiddenPreviewImage.src = "images/" + firstImage;
+    blendSlider.value = 100;
+    displayedImage.style.opacity = 1;
 }
 
 displayedImage.addEventListener("click", () => {
@@ -38,12 +45,6 @@ displayedImage.addEventListener("click", () => {
 // Initial load of the first image pair
 // changeImage(0);
 
-function extractFilename(fullPath) {
-    const url = new URL(fullPath);
-    const name = url.pathname.split('/').pop()
-    return name;
-}
-
 document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowLeft") {
         changeImage(-1); // Go to the previous pair on left arrow key
@@ -52,13 +53,14 @@ document.addEventListener("keydown", (event) => {
     } else if (event.key === " ") {
         event.preventDefault(); // Prevent default space key behavior (scrolling)
         swapImageDepthMap();
+    } else if (event.key === "Escape") {
+        window.location.href = "./";
     }
 });
 
 function swapImageDepthMap() {
-    // Swap between the two images of the current pair on space key
-    const [secondImage, firstImage] = imagePairs[currentPairIndex];
-    const firstImageDisplayed = ("v2/img/" + (extractFilename(displayedImage.src)) === firstImage)
-    displayedImage.src = "images/" + (firstImageDisplayed ? secondImage : firstImage);
+    const newValue = blendSlider.value > 50 ? 0 : 100;
+    blendSlider.value = newValue;
+    displayedImage.style.opacity = newValue / 100;
 }
 

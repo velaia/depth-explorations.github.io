@@ -10,15 +10,32 @@ body, html {
 #imageContainer {
 	display: grid;
 	height: 100%;
-    /* position: relative;
-    overflow: hidden; */
+    position: relative;
 }
 
 #displayedImage {
+    grid-area: 1/1;
     max-width: 100%;
     max-height: 100vh;
-    /*object-fit: contain;
-    cursor: pointer; */
+    z-index: 2;
+}
+
+#hiddenPreviewImage {
+    grid-area: 1/1;
+    max-width: 100%;
+    max-height: 100vh;
+    z-index: 1;
+}
+
+#blendSlider {
+    grid-area: 1/1;
+    align-self: end;
+    justify-self: center;
+    z-index: 10;
+    width: 300px;
+    margin-bottom: 16px;
+    opacity: 0.6;
+    cursor: pointer;
 }
 
 button {
@@ -35,6 +52,16 @@ button {
 #backButton {
     left: 10px;
     top: 1%;
+}
+
+#closeButton {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    transform: none;
+    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 #prevButton {

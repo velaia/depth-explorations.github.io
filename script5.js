@@ -1,14 +1,21 @@
 let currentPairIndex = 0;
 let imagePairs;
 
+const counter = document.getElementById("counter");
+
 fetch('image-map-v2.json')
   .then(response => response.json())
   .then(data => {
-    // Store the parsed JSON array in a variable
     imagePairs = data;
 
-    // Do something with the data
-    console.log(imagePairs); 
+    const hashIndex = parseInt(window.location.hash.slice(1));
+    if (!isNaN(hashIndex) && hashIndex >= 0 && hashIndex < imagePairs.length) {
+        currentPairIndex = hashIndex - 1;
+        changeImage(1);
+    } else {
+        counter.textContent = `1 / ${imagePairs.length}`;
+    }
+    preloadAdjacent();
   })
   .catch(error => console.error('Error fetching or parsing JSON:', error));
 
@@ -36,6 +43,19 @@ function changeImage(direction) {
     hiddenPreviewImage.src = "images/" + firstImage;
     blendSlider.value = 100;
     displayedImage.style.opacity = 1;
+    counter.textContent = `${currentPairIndex + 1} / ${imagePairs.length}`;
+    history.replaceState(null, "", "#" + currentPairIndex);
+    preloadAdjacent();
+}
+
+function preloadAdjacent() {
+    [-1, 1].forEach(offset => {
+        let idx = currentPairIndex + offset;
+        if (idx < 0) idx = imagePairs.length - 1;
+        if (idx >= imagePairs.length) idx = 0;
+        const [a, b] = imagePairs[idx];
+        [a, b].forEach(src => { new Image().src = "images/" + src; });
+    });
 }
 
 displayedImage.addEventListener("click", () => {
